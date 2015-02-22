@@ -5,8 +5,8 @@ set -e
 TIMEOUT=60
 APP_ROOT=/home/kb10uy/ssserver
 PID=/tmp/unicorn.pid
-#RAILS_ENV=production
-RAILS_ENV=development
+RAILS_ENV=production
+#RAILS_ENV=development
 CMD="bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E $RAILS_ENV"
 action="$1"
 set -u
