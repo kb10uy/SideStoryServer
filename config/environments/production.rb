@@ -1,6 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  
+  config.logger = Logger.new('/var/log/ssserver_rails.log', 'weekly')
+  
   # Code is not reloaded between requests.
   config.cache_classes = true
 
