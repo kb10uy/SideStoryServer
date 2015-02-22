@@ -1,0 +1,21 @@
+ja:
+  users:
+    mailer:
+      confirmation_instructions:
+        subject: "Kb10uy S3のアカウント登録の確認"
+        title: "Kb10uy SideStory Serverへようこそ！"
+        confirm_explanation: "以下のリンクからアカウント確認のメールを送信できます。"
+        confirm_link: "アカウントの確認"
+      reset_password_instructions:
+        subject: "Kb10uy S3のパスワードの再設定"
+        title: "パスワードの再設定"
+        reset_password_explanation: "パスワードの再設定がリクエストされました。以下のリンクからパスワードを変更出来ます。"
+        reset_password_link: "パスワードの変更"
+        please_ignore: "もしあなたがこのメールに心当たりがない場合、このメールは単に無視して下さい。"
+        wont_change: "リンクをクリックしてパスワードを再設定しない限り、これまでのパスワードが保持されます。"
+      unlock_instructions:
+        subject: "Kb10uy S3のアカウントのロック解除"
+        title: "アカウントのロック解除"
+        locked_explanation: "ログインの試行回数が多すぎたため、あなたのアカウントは一時的にロックされました。"
+        unlock_explanation: "ロックを解除するためには、以下のリンクをクリックして下さい。"
+        unlock_link: "ロック解除"

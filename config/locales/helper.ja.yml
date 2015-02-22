@@ -1,0 +1,8 @@
+ja:
+  helpers:
+    label:
+      user:
+        username: ユーザー名
+        password: パスワード
+        email: メールアドレス
+        password_confirmation: パスワードの再入力
