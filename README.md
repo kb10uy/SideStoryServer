@@ -1,5 +1,8 @@
-#Kb10uy S3 - SideStory Server
+#Kb10uy S3 - ShortStory Server
 SSを投稿したりするやつ
+
+##リポジトリ名
+ゆるして
 
 ##特徴
 * Ruby on Rails

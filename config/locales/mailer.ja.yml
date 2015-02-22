@@ -3,7 +3,7 @@ ja:
     mailer:
       confirmation_instructions:
         subject: "Kb10uy S3のアカウント登録の確認"
-        title: "Kb10uy SideStory Serverへようこそ！"
+        title: "Kb10uy Short Story Serverへようこそ！"
         confirm_explanation: "以下のリンクからアカウント確認のメールを送信できます。"
         confirm_link: "アカウントの確認"
       reset_password_instructions:
