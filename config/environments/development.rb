@@ -39,7 +39,7 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   #
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: Rails.application.secrets.mailer_callback }
   config.action_mailer.raise_delivery_errors = true
   config.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -48,8 +48,8 @@ Rails.application.configure do
     :port => '587',
     :domain => 'smtp.gmail.com',
     :authentication => 'plain',
-    :user_name => 'kb10uy+service@gmail.com',
-    :password => 'i25m0157er'
+    :user_name => Rails.application.secrets.mailer_address,
+    :password => Rails.application.secrets.mailer_password
   }
 
 end
