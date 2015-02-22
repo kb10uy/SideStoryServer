@@ -1,0 +1,30 @@
+<h1>マイページ</h1>
+
+<ul class="nav nav-tabs nav-justified">
+  <li role="presentation" class="active"><a href="#home" aria_controls="home" role="tab" data-toggle="tab">ホーム</a></li>
+  <li role="presentation"><a href="#notifications" aria_controls="notifications" role="tab" data-toggle="tab">通知</a></li>
+  <li role="presentation"><a href="#requests" aria_controls="requests" role="tab" data-toggle="tab">リクエスト</a></li>
+</ul>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade in active" id="home">
+    <ul class="nav nav-pills nav-stacked col-md-3">
+      <li role="presentation" class="active"><a href="#home_watching" aria_controls="home_watching" role="tab" data-toggle="tab">定点観測</a></li>
+      <li role="presentation"><a href="#home_favorites" aria_controls="home_favorites" role="tab" data-toggle="tab">お気に入り</a></li>
+      <li role="presentation"><a href="#home_myposts" aria_controls="home_myposts" role="tab" data-toggle="tab">自分の投稿</a></li>
+    </ul>
+    <div class="tab-content col-md-9">
+      <div role="tabpanel" class="tab-pane fade in active" id="home_watching">
+        <h2>定点観測</h2>
+        <p>現在観測中のタグ</p>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="home_favorites">
+        <h2>お気に入り</h2>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="home_myposts">
+        <h2>自分の投稿</h2>
+      </div>
+    </div>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="notifications">...</div>
+  <div role="tabpanel" class="tab-pane fade" id="requests">...</div>
+</div>

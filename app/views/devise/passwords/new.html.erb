@@ -1,0 +1,21 @@
+<h2>パスワードを忘れてしまいましたか？</h2>
+
+<div class="form-horizontal" role="form">
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+    <div class="form-group">
+    <%= f.label :email, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-8">
+      <%= f.email_field :email, :autofocus => true, :class => 'form-control' %>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      <%= f.submit "このメールアドレス宛てにパスワードリセット用のメールを送信", :class => 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
+</div>
+
+<%= render "devise/shared/links" %>

@@ -1,0 +1,28 @@
+<% if user_signed_in? %>
+  <div class="col-md-7">
+<% else %>
+  <div class="col-md-12">
+<% end %>
+  <h2>みんなの投稿</h2>
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="#posts_new" aria_controls="posts_new" role="tab" data-toggle="tab">新着</a></li>
+    <li role="presentation"><a href="#posts_popular" aria_controls="posts_popular" role="tab" data-toggle="tab">人気</a></li>
+    <li role="presentation"><a href="#posts_highgrade" aria_controls="posts_highgrade" role="tab" data-toggle="tab">高評価</a></li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="posts_new">
+      
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="posts_popular">
+      
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="posts_highgrade">
+      
+    </div>
+  </div>
+</div>
+<% if user_signed_in? %>
+  <div class="col-md-5">
+    <h2><%= current_user.username %>さんの通知</h2>
+  </div>
+<% end %>
