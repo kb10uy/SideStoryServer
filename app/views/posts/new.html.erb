@@ -33,16 +33,14 @@
     
     <div class="form-group">
       <%= f.label :tags, :class => 'col-sm-2 col-sm-offset-1 control-label' %>
-      <div class="col-sm-8">
-        <%= f.input :tag_list, id => 'tag_list', :class => 'form-control' %>
-        <script type="text/javascript">
-          $(function() {
-            // If using Bootstrap 2, be sure to include:
-            // Tags.bootstrapVersion = "2";
-            $('#tag_list').tags();
-          });
-        </script>
-      </div>
+      <div id="tag_list" class="tag-list col-sm-8"></div>
+      <script type="text/javascript">
+        $(function() {
+          // If using Bootstrap 2, be sure to include:
+          // Tags.bootstrapVersion = "2";
+          $('#tag_list').tags();
+        });
+      </script>
     </div>
     
     <div class="form-group">
