@@ -1,0 +1,20 @@
+{
+  "name": "ssserver",
+  "version": "0.0.0",
+  "description": "SSを投稿したりするやつ",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kb10uy/SideStoryServer.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "04c08e18e0c7006ab33b26cf5a93a6de002aaf8d"
+}
