@@ -13,3 +13,21 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-tags";
+
+body {
+	padding-top: 70px;
+	margin-bottom: 60px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+}
