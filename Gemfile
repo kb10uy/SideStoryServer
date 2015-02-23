@@ -34,6 +34,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'figaro'
 gem 'haml-rails'
+gem 'acts-as-taggable-on'
 #gem 'bootstrap-sass', '~>3.3.3'
 
 # Use Capistrano for deployment

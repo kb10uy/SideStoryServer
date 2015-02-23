@@ -7,8 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-    <%= render :file => 'layouts/navbar' %>
+  <%= render :file => 'layouts/navbar' %>
+  <div class="container" id="content">
     <%= yield %>
   </div>
 </body>
