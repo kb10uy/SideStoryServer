@@ -1,18 +1,20 @@
 Rails.application.routes.draw do
-  get 'mypage', to: 'mypage#index'
-
+  get 'about' => 'static#about'
+  get 'tutorial' => 'static#tutorial'
+  get 'policy' => 'static#policy'
+  get 'contact' => 'static#contact'
+  get 'mypage' => 'mypage#index'
+  
   get 'posts/new'
-
   get 'posts/:id' => 'posts#show'
   get 'posts/show' => 'posts#show'
-  
   get 'posts/edit'
-  
   post 'posts/register'
-
+  
   devise_for :users
+  
   get 'home/welcome'
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
