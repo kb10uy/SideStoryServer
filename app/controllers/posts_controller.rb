@@ -5,7 +5,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    
+    begin
+      @post = Post.find(params[:id])
+    rescue
+      render :action => :notfound
+      return
+    end
   end
 
   def edit
@@ -13,6 +18,9 @@ class PostsController < ApplicationController
   end
   
   def register
-    
+    params.require(:post).permit(:title, :content)
+    redirect_to :action => "show"
+    return
   end
+  
 end

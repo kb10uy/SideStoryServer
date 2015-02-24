@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   get 'posts/new'
 
-  get 'posts/show'
-
+  get 'posts/:id' => 'posts#show'
+  get 'posts/show' => 'posts#show'
+  
   get 'posts/edit'
   
   post 'posts/register'
