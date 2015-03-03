@@ -37,6 +37,7 @@ gem 'figaro'
 gem 'haml-rails'
 gem 'acts-as-taggable-on'
 gem 'bootstrap-sass', '~>3.3.3'
+gem 'gon'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   acts_as_taggable
   
-  validates :title, :presence => true
-  validates :content, :presence => true
+  validates :title, length: { in: 1..96 }
+  validates :content, length: { minimum: 1 }
 end

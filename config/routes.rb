@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'posts/:id' => 'posts#show'
   get 'posts/show' => 'posts#show'
   get 'posts/edit'
-  post 'posts/register'
+  post 'posts/new' => 'posts#register'
   
   devise_for :users
   

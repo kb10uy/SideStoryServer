@@ -14,6 +14,7 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require turbolinks
+//= require typeahead
 //= require bootstrap-sprockets
 //= require bootstrap-checkbox
-//= require bootstrap-tags
+//= require bootstrap-tagsinput

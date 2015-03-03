@@ -1,0 +1,18 @@
+ja:
+  posts:
+    new:
+      error_count: '%{count}件のエラーがあります。'
+      
+      text_new_post: '新しい投稿'
+      text_new_inst: '新しい作品を投稿しましょう！'
+      text_new_hint: '他の人が作品を探しやすいように適切なタグを設定しましょう。'
+      submit: '投稿する'
+  activerecord:
+    models:
+      user: 'ユーザー'
+      post: '投稿'
+    attributes:
+      post:
+        title: 'タイトル'
+        tag_list: 'タグ'
+        content: 'コンテンツ'
