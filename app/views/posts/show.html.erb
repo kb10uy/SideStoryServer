@@ -1,2 +1,31 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h1><%= @post.title %> <small>by <%= @post_user.username %></small></h1>
+<div class="row">
+  <div class="col-md-10 col-sm-12">
+    <ul class="list-inline">
+      <% if @post.tags.count > 0 %>
+        <% @post.tags.each do |t| %>
+          <li><h4><a class="label label-primary" href="#notyet"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <%= t.name %></a></h4></li>
+        <% end %>
+      <% else %>
+        <p>タグはありません</p>
+      <% end %>
+    </ul>
+  </div>
+  <% if (user_signed_in? and current_user.id == @post.userid) %>
+    <div class="col-md-2 col-sm-12">
+      <div class="bin-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          投稿メニュー <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#notyet">編集</a></li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="row">
+  <p>
+    <%= simple_format(h(@post.content)) %>
+  </p>
+</div>

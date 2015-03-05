@@ -223,6 +223,7 @@ DEPENDENCIES
   omniauth
   omniauth-twitter
   rails (= 4.2.0)
+  rails-html-sanitizer
   sass-rails (~> 5.0)
   spring
   sqlite3

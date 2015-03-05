@@ -38,6 +38,7 @@ gem 'haml-rails'
 gem 'acts-as-taggable-on'
 gem 'bootstrap-sass', '~>3.3.3'
 gem 'gon'
+gem 'rails-html-sanitizer'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

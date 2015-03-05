@@ -7,6 +7,8 @@ ja:
       text_new_inst: '新しい作品を投稿しましょう！'
       text_new_hint: '他の人が作品を探しやすいように適切なタグを設定しましょう。'
       submit: '投稿する'
+    show:
+      tags: 'タグ'
   activerecord:
     models:
       user: 'ユーザー'

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'posts/show' => 'posts#show'
   get 'posts/edit'
   post 'posts/new' => 'posts#register'
+  get 'posts/:id/delete' => 'posts#delete'
   
   devise_for :users
   

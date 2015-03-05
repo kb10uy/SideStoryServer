@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
   def new
     @post = Post.new
   end
@@ -10,6 +9,12 @@ class PostsController < ApplicationController
     rescue
       render :action => :notfound
       return
+    end
+    begin
+      @post_user = User.find(@post.userid)
+    rescue
+      @post_user = User.new
+      @post_user.username = "<ユーザー不明>"
     end
   end
 
@@ -22,12 +27,23 @@ class PostsController < ApplicationController
     @post = Post.new(ps)
     @post.userid = current_user.id
     if @post.save
-      render @post
+      flash[:notice] = "投稿が完了しました。"
+      redirect_to :action => 'show', id: @post.id
     else
       gon.tags = @post.tag_list
       render :action => 'new', id: @post.id
     end
     return
+  end
+  
+  def delete
+    begin
+      @post = Post.find(params[:id])
+    rescue
+      render :action => :notfound
+      return
+    end
+    
   end
   
 end
