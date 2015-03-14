@@ -7,8 +7,15 @@ ja:
       text_new_inst: '新しい作品を投稿しましょう！'
       text_new_hint: '他の人が作品を探しやすいように適切なタグを設定しましょう。'
       submit: '投稿する'
+    edit:
+      error_count: '%{count}件のエラーがあります。'
+      update: '更新する'
+    delete:
+      confirm: '削除する'
     show:
       tags: 'タグ'
+      edit: '編集'
+      delete: '削除'
   activerecord:
     models:
       user: 'ユーザー'

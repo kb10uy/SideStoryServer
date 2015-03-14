@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   get 'mypage' => 'mypage#index'
   
   get 'posts/new'
-  get 'posts/:id' => 'posts#show'
-  get 'posts/show' => 'posts#show'
-  get 'posts/edit'
   post 'posts/new' => 'posts#register'
-  get 'posts/:id/delete' => 'posts#delete'
+  get 'posts/:id' => 'posts#show', :as => :posts_show
+  get 'posts/:id/edit' => 'posts#edit', :as => :posts_edit
+  patch 'posts/:id/update' => 'posts#update', :as => :posts_update
+  get 'posts/:id/delete' => 'posts#delete', :as => :posts_delete
+  delete 'posts/:id/delete' => 'posts#destroy', :as => :posts_destroy
   
   devise_for :users
   

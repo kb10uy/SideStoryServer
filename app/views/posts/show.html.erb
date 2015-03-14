@@ -18,7 +18,8 @@
           投稿メニュー <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu">
-          <li><a href="#notyet">編集</a></li>
+          <li><%= link_to t('.edit'), posts_edit_path(@post.id) %></li>
+          <li><%= link_to t('.delete'), posts_delete_path(@post.id) %></li>
         </ul>
       </div>
     </div>

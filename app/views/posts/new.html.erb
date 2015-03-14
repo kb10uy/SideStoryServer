@@ -55,6 +55,7 @@
       <div class="col-sm-8">
         <%= f.text_field :tag_list, :id => 'tags_field', :class => 'form-control' %>
         <script type="text/javascript">
+          $('#tags_field').val($('#tags_field').val().replace(/ /g,", "));
           $('#tags_field')
             .tagsinput({
               maxTags: 10,

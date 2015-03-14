@@ -2,4 +2,5 @@
 <div class="row">
   <h2>削除対象: <%= @post.title %></h2>
   <p>削除してよろしいですか?</p>
+  <%= button_to t('.confirm'), posts_destroy_path(@post.id), :class => 'btn btn-primary btn-lg', :method => :delete %>
 </div>
