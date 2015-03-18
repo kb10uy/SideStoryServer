@@ -1,0 +1,17 @@
+<% content_for :title do %>「<%= @keyword %>」の検索結果<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <h1>
+      「<%= @keyword %>」の検索結果
+      <small><%= @count %>件のうち<%= @pmin %>～<%= @pmax %>件目</small>
+    </h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <% @ret.each do |p| %>
+      <%= render partial: 'post', locals: { post: p } %>
+    <% end %>
+  </div>
+</div>
+<%= paginate @ret %>

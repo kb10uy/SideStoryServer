@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'search' => 'search#all', :as => :search_all
+  get 'search/posts'
+  get 'search/users'
+  get 'search/requests'
+
   get 'about' => 'static#about'
   get 'tutorial' => 'static#tutorial'
   get 'policy' => 'static#policy'
