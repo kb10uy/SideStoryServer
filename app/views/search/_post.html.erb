@@ -1,0 +1,14 @@
+<div class="col-md-12">
+  <h2>
+    <a href="#"><%= post.title %></a> <small>by <%= post.user.blank? ? '<ユーザー不明>' : post.user.username %></small>
+  </h2>
+  <div>
+    <p><%= post.content.length >= 100 ? post.content.slice(0..99)+"..." : post.content %></p>
+    <div>
+      <span class="col-xs-6 col-sm-2"><span class="glyphicon glyphicon-eye-open"></span>0</span>
+      <span class="col-xs-6 col-sm-2"><span class="glyphicon glyphicon-thumbs-up"></span>0</span>
+      <span class="col-xs-6 col-sm-2"><span class="glyphicon glyphicon-book"></span>0</span>
+      <span class="col-xs-6 col-sm-2"><span class="glyphicon glyphicon-pencil"></span>0</span>
+    </div>
+  </div>
+</div>

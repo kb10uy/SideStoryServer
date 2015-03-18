@@ -12,7 +12,7 @@ class PostsController < ApplicationController
       return
     end
     begin
-      @post_user = User.find(@post.userid)
+      @post_user = @post.user
     rescue
       @post_user = User.new
       @post_user.username = "<ユーザー不明>"
@@ -22,8 +22,8 @@ class PostsController < ApplicationController
   def edit
     begin
       @post = Post.find(params[:id])
-      @post_user = User.find(@post.userid)
-      if (current_user.id != @post.userid) 
+      @post_user = User.find(@post.user_id)
+      if (current_user != @post.user) 
         redner :action => :forbidden
       end
     rescue
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
   def register
     ps = params.require(:post).permit(:title, :content, :tag_list)
     @post = Post.new(ps)
-    @post.userid = current_user.id
+    @post.user = current_user
     if @post.save
       flash[:notice] = "投稿が完了しました。"
       redirect_to :action => 'show', id: @post.id
@@ -61,7 +61,7 @@ class PostsController < ApplicationController
   def delete
     begin
       @post = Post.find(params[:id])
-      if (current_user.id != @post.userid) 
+      if (current_user != @post.user) 
         redner :action => :forbidden
       end
     rescue
@@ -73,7 +73,7 @@ class PostsController < ApplicationController
   def destroy
     begin
       @post = Post.find(params[:id])
-      if (current_user.id != @post.userid) 
+      if (current_user != @post.user) 
         redner :action => :forbidden
       end
       @post.destroy
