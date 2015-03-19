@@ -1,6 +1,20 @@
 <% content_for :title do %><%= @post.title %><% end %>
 <h1><%= @post.title %> <small>by <%= @post_user.username %></small></h1>
 <div class="row">
+  <div class="col-md-12">
+    <div class="col-md-3 col-xs-6">
+      <span class="glyphicon glyphicon-eye-open"></span> 閲覧: <%= @post.pvcount %>
+    </div>
+    <div class="col-md-3 col-xs-6">
+      <span class="glyphicon glyphicon-thumbs-up"></span> 良さ: <%= @post.nicecount %>
+    </div>
+    <div class="col-md-3 col-xs-6">
+      <span class="glyphicon glyphicon-book"></span> 収録: 0
+    </div>
+    <div class="col-md-3 col-xs-6">
+      <span class="glyphicon glyphicon-pencil"></span> コメ: 0
+    </div>
+  </div>
   <div class="col-md-10 col-sm-12">
     <ul class="list-inline">
       <% if @post.tags.count > 0 %>
@@ -35,7 +49,58 @@
   <% end %>
 </div>
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-sm-6">
+    <div class="btn-group" role="group" aria-label="...">
+      <button type="button" id="btn_nice" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span> 良さ</button>
+      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal_putting"><span class="glyphicon glyphicon-book"></span> 収録する</button>
+    </div>
+    <script type="text/javascript">
+      $('#btn_nice').tooltip({
+        title     : '良さしました',
+        trigger   : 'click'
+      }).on('click', function () {
+        /*
+        $.ajax({
+          url: "posts/nice",
+          type: "PATCH",
+          data: { 
+            year : $(":selected").attr("value"),
+            id: ,
+            mode: 'hoge',
+            type: 'entry'
+          },
+          dataType: "html",
+          success: function(data) {
+            alert("success");
+          },
+          error: function(data) {
+            alert("errror");
+          }
+        });
+        */
+      }).hover(function() {}, function() {
+        $('#btn_nice').tooltip('hide');
+      });
+    </script>
+    <div class="modal fade" id="modal_putting" tabindex="-1" role="dialog" aria-labelledby="puttingLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">自分のコレクションに収録する</h4>
+          </div>
+          <div class="modal-body">
+            <p>追加先のコレクションを選択してください</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+            <button type="button" class="btn btn-primary">追加する</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-2">
     <a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-size="large">ツイート</a>
     <script>
       !function(d, s, id){

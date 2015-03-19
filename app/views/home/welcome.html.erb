@@ -11,13 +11,25 @@
   </ul>
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade in active" id="posts_new">
-      
+      <div class="col-md-12">
+        <% @posts_new.each do |p| %>
+          <%= render partial: 'post', locals: { post: p } %>
+        <% end %>
+      </div>
     </div>
     <div role="tabpanel" class="tab-pane fade" id="posts_popular">
-      
+      <div class="col-md-12">
+        <% @posts_pop.each do |p| %>
+          <%= render partial: 'post', locals: { post: p } %>
+        <% end %>
+      </div>
     </div>
     <div role="tabpanel" class="tab-pane fade" id="posts_highgrade">
-      
+      <div class="col-md-12">
+        <% @posts_hig.each do |p| %>
+          <%= render partial: 'post', locals: { post: p } %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

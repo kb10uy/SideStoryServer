@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   patch 'posts/:id/update' => 'posts#update', :as => :posts_update
   get 'posts/:id/delete' => 'posts#delete', :as => :posts_delete
   delete 'posts/:id/delete' => 'posts#destroy', :as => :posts_destroy
+  patch 'posts/nice'
   
   devise_for :users
   

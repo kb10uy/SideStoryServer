@@ -7,6 +7,9 @@ class PostsController < ApplicationController
   def show
     begin
       @post = Post.find(params[:id])
+      Post.record_timestamps = false
+      @post.update(pvcount: @post.pvcount + 1)
+      Post.record_timestamps = true
     rescue
       render :action => :notfound
       return
@@ -83,6 +86,12 @@ class PostsController < ApplicationController
       render :action => :notfound
       return
     end
+  end
+  
+  def nice
+    Post.record_timestamps = false
+    
+    Post.record_timestamps = true
   end
   
 end

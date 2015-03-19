@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150318130358) do
+ActiveRecord::Schema.define(version: 20150319131325) do
 
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20150318130358) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "syntax"
+    t.integer  "pvcount"
+    t.integer  "nicecount"
   end
 
   create_table "taggings", force: :cascade do |t|
