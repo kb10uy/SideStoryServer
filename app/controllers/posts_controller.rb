@@ -50,6 +50,8 @@ class PostsController < ApplicationController
   def register
     ps = params.require(:post).permit(:title, :content, :tag_list)
     @post = Post.new(ps)
+    @post.pvcount = 0
+    @post.nicecount = 0
     @post.user = current_user
     if @post.save
       flash[:notice] = "投稿が完了しました。"
