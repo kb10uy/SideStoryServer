@@ -56,28 +56,16 @@
     </div>
     <script type="text/javascript">
       $('#btn_nice').tooltip({
-        title     : '良さしました',
-        trigger   : 'click'
+        title     : "良さします",
       }).on('click', function () {
-        /*
         $.ajax({
-          url: "posts/nice",
-          type: "PATCH",
-          data: { 
-            year : $(":selected").attr("value"),
-            id: ,
-            mode: 'hoge',
-            type: 'entry'
-          },
-          dataType: "html",
-          success: function(data) {
-            alert("success");
-          },
-          error: function(data) {
-            alert("errror");
-          }
+          url: gon.nicepath,
+          type: "PATCH"
         });
-        */
+        $('#btn_nice').tooltip({
+          title     : "良さしました",
+        });
+        $('#btn_nice').attr("disabled","disabled");
       }).hover(function() {}, function() {
         $('#btn_nice').tooltip('hide');
       });

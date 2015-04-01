@@ -10,6 +10,9 @@ class PostsController < ApplicationController
       Post.record_timestamps = false
       @post.update(pvcount: @post.pvcount + 1)
       Post.record_timestamps = true
+      gon.post = @post
+      gon.nicepath = view_context.posts_nice_path(params[:id])
+      logger.debug("####################" + gon.nicepath)
     rescue
       render :action => :notfound
       return
@@ -92,7 +95,12 @@ class PostsController < ApplicationController
   
   def nice
     Post.record_timestamps = false
-    
+    @post = Post.find(params[:id])
+    if @post.update(nicecount: @post.nicecount + 1)
+      head :ok
+    else
+      head :internal_server_error
+    end
     Post.record_timestamps = true
   end
   
