@@ -7,6 +7,13 @@ class PostsController < ApplicationController
   def show
     begin
       @post = Post.find(params[:id])
+      Post.record_timestamps = false
+      @post.update(pvcount: @post.pvcount + 1)
+      Post.record_timestamps = true
+      gon.post = @post
+      gon.nicepath = view_context.posts_nice_path(params[:id])
+      gon.badpath = view_context.posts_bad_path(params[:id])
+      logger.debug("####################" + gon.nicepath)
     rescue
       render :action => :notfound
       return
@@ -47,6 +54,8 @@ class PostsController < ApplicationController
   def register
     ps = params.require(:post).permit(:title, :content, :tag_list)
     @post = Post.new(ps)
+    @post.pvcount = 0
+    @post.nicecount = 0
     @post.user = current_user
     if @post.save
       flash[:notice] = "投稿が完了しました。"
@@ -83,6 +92,28 @@ class PostsController < ApplicationController
       render :action => :notfound
       return
     end
+  end
+  
+  def nice
+    Post.record_timestamps = false
+    @post = Post.find(params[:id])
+    if @post.update(nicecount: @post.nicecount + 1)
+      head :ok
+    else
+      head :internal_server_error
+    end
+    Post.record_timestamps = true
+  end
+  
+  def bad
+    Post.record_timestamps = false
+    @post = Post.find(params[:id])
+    if @post.update(badcount: @post.badcount + 1)
+      head :ok
+    else
+      head :internal_server_error
+    end
+    Post.record_timestamps = true
   end
   
 end

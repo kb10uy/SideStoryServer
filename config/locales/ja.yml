@@ -16,6 +16,7 @@ ja:
       tags: 'タグ'
       edit: '編集'
       delete: '削除'
+      writer_only: '作者のあなたにだけ表示される情報です'
   activerecord:
     models:
       user: 'ユーザー'

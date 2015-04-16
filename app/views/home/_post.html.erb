@@ -7,7 +7,7 @@
       <p><%= post.content.length >= 100 ? post.content.slice(0..99)+"..." : post.content %></p>
       <div>
         <span class="col-xs-6 col-sm-2"><span class="glyphicon glyphicon-eye-open"></span> <%= post.pvcount %></span>
-        <span class="col-xs-6 col-sm-2"><span class="glyphicon glyphicon-thumbs-up"></span> 0</span>
+        <span class="col-xs-6 col-sm-2"><span class="glyphicon glyphicon-thumbs-up"></span> <%= post.nicecount %></span>
         <span class="col-xs-6 col-sm-2"><span class="glyphicon glyphicon-book"></span> 0</span>
         <span class="col-xs-6 col-sm-2"><span class="glyphicon glyphicon-pencil"></span> 0</span>
       </div>
