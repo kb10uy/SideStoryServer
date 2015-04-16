@@ -15,6 +15,20 @@
       <span class="glyphicon glyphicon-pencil"></span> コメ: 0
     </div>
   </div>
+  <% if (user_signed_in? and current_user == @post.user) %>
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= t('.writer_only') %></h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-md-3">
+            <span class="glyphicon glyphicon-thumbs-down"></span> 悪さ: <%= @post.badcount %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
   <div class="col-md-10 col-sm-12">
     <ul class="list-inline">
       <% if @post.tags.count > 0 %>
@@ -52,6 +66,7 @@
   <div class="col-sm-6">
     <div class="btn-group" role="group" aria-label="...">
       <button type="button" id="btn_nice" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span> 良さ</button>
+      <button type="button" id="btn_bad" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-down"></span> 悪さ</button>
       <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal_putting"><span class="glyphicon glyphicon-book"></span> 収録する</button>
     </div>
     <script type="text/javascript">
@@ -68,6 +83,21 @@
         $('#btn_nice').attr("disabled","disabled");
       }).hover(function() {}, function() {
         $('#btn_nice').tooltip('hide');
+      });
+      
+      $('#btn_bad').tooltip({
+        title     : "悪さします(作者にのみ総数が表示されます)",
+      }).on('click', function () {
+        $.ajax({
+          url: gon.badpath,
+          type: "PATCH"
+        });
+        $('#btn_bad').tooltip({
+          title     : "悪さしました",
+        });
+        $('#btn_bad').attr("disabled","disabled");
+      }).hover(function() {}, function() {
+        $('#btn_bad').tooltip('hide');
       });
     </script>
     <div class="modal fade" id="modal_putting" tabindex="-1" role="dialog" aria-labelledby="puttingLabel" aria-hidden="true">

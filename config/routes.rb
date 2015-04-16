@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'posts/:id/delete' => 'posts#delete', :as => :posts_delete
   delete 'posts/:id/delete' => 'posts#destroy', :as => :posts_destroy
   patch 'posts/:id/nice' => 'posts#nice', :as => :posts_nice
+  patch 'posts/:id/bad' => 'posts#bad', :as => :posts_bad
   
   devise_for :users
   

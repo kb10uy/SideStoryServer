@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150319131325) do
+ActiveRecord::Schema.define(version: 20150416151144) do
 
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20150319131325) do
     t.string   "syntax"
     t.integer  "pvcount"
     t.integer  "nicecount"
+    t.integer  "badcount"
   end
 
   create_table "taggings", force: :cascade do |t|
