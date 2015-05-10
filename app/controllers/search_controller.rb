@@ -3,7 +3,7 @@ class SearchController < ApplicationController
     @keyword = params[:keyword]
     @page = params.fetch(:page, 1)
     @query = Post.search(:title_cont => @keyword).result
-    @ret = @query.page(1)
+    @ret = @query.page(@page)
     @count = @ret.total_count
     @pmin = @ret.offset_value
     @pmax = @ret.offset_value + @ret.length

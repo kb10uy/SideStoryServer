@@ -1,5 +1,10 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :register, :delete]
+  
+  def index
+    @posts = Post.page(params[:page]).reverse_order
+  end
+  
   def new
     @post = Post.new
   end
@@ -56,6 +61,7 @@ class PostsController < ApplicationController
     @post = Post.new(ps)
     @post.pvcount = 0
     @post.nicecount = 0
+    @post.badcount = 0
     @post.user = current_user
     if @post.save
       flash[:notice] = "投稿が完了しました。"

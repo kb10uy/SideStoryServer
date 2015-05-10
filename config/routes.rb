@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get 'policy' => 'static#policy'
   get 'contact' => 'static#contact'
   get 'mypage' => 'mypage#index'
+  get 'mypage/posts' => 'mypage#myposts', :as => :mypage_myposts
   
+  get 'posts' => 'posts#index', :as => :posts_index
   get 'posts/new'
   post 'posts/new' => 'posts#register'
   get 'posts/:id' => 'posts#show', :as => :posts_show
