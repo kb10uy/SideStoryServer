@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :register, :delete]
   
   def index
-    @posts = Post.page(params[:page])
+    @posts = Post.page(params[:page]).reverse_order
   end
   
   def new
