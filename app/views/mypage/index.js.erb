@@ -1,0 +1,1 @@
+$("#myposts").html("<% @my_posts.each do |p| %><%= j(render :partial => 'home/post', locals: { post: p }) %><% end %>");

@@ -22,6 +22,12 @@
       </div>
       <div role="tabpanel" class="tab-pane fade" id="home_myposts">
         <h2>自分の投稿</h2>
+        <div id="myposts">
+          <% @my_posts.each do |p| %>
+            <%= render :partial => 'home/post', locals: { post: p } %>
+          <% end %>
+        </div>
+        <%= link_to t('.more'), mypage_myposts_path %>
       </div>
     </div>
   </div>
