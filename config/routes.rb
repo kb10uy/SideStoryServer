@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'search' => 'search#all', :as => :search_all
   get 'search/posts'
   get 'search/users'
@@ -21,6 +22,13 @@ Rails.application.routes.draw do
   delete 'posts/:id/delete' => 'posts#destroy', :as => :posts_destroy
   patch 'posts/:id/nice' => 'posts#nice', :as => :posts_nice
   patch 'posts/:id/bad' => 'posts#bad', :as => :posts_bad
+  
+  get 'collections' => 'collections#index', :as => :collections_index
+  get 'collections/:id' => 'collections#show', :as => :collections_show
+  post 'collections/create'
+  delete 'collections/:id/destroy' => 'collections#destroy', :as => :collections_destroy
+  patch 'collections/:id/update' => 'collections#update', :as => :collections_update
+  
   
   devise_for :users
   

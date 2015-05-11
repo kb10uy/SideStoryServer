@@ -18,3 +18,5 @@
 //= require bootstrap-sprockets
 //= require bootstrap-checkbox
 //= require bootstrap-tagsinput
+
+//= require bootstrap-select

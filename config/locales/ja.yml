@@ -20,6 +20,10 @@ ja:
   mypage:
     index:
       more: 'もっと見る'
+      new_collection: '新しいコレクション'
+      create_collection: 'コレクションを作成'
+      collection_send: '作成'
+      collection_cancel: 'キャンセル'
   activerecord:
     models:
       user: 'ユーザー'
@@ -29,3 +33,7 @@ ja:
         title: 'タイトル'
         tag_list: 'タグ'
         content: 'コンテンツ'
+      collection:
+        name: 'タイトル'
+        description: '説明'
+        make_private: 非公開にする

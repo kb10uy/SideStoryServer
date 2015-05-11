@@ -3,10 +3,7 @@ class MypageController < ApplicationController
   
   def index
     @my_posts = Post.where(user: current_user).page(params[:page]).per(10)
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    @collection = Collection.new
   end
   
   def myposts
