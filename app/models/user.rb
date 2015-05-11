@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
   
   validates_uniqueness_of :username
   validates_presence_of :username
-  has_many :post
+  has_many :posts
+  has_many :collections
 end

@@ -25,25 +25,12 @@
           </ul>
         </li>
       </ul>
-      <%= form_tag search_all_path, :method => "get", :class => 'navbar-form navbar-left' do %>
+      <%= form_tag search_posts_path, :method => "get", :class => 'navbar-form navbar-left' do %>
         <div class="form-group">
-          <%= text_field_tag :keyword, "", :class => 'form-control', :placeholder => 'タイトルで検索' %>
+          <%= text_field_tag :keyword, "", :class => 'form-control', :placeholder => '検索キーワードを入力' %>
         </div>
-        <div class="btn-group">
-          <%= button_tag "検索", :type => 'submit', :class => 'btn btn-default' %>
-          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <span class="caret"></span>
-            <span class="sr-only">他の検索</span>
-          </button>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">本文検索</a></li>
-            <li><a href="#">タグ検索</a></li>
-            <li><a href="#">作者検索</a></li>
-            <li class="divider"></li>
-            <li><a href="#">ユーザー検索</a></li>
-            <li><a href="#">リクエスト検索</a></li>
-          </ul>
-        </div>
+        <%= select_tag :type, options_for_select([["タイトル", "title"], ["タグ", "tag"], ["コンテンツ", "content"], ["ユーザー", "user"], ["リクエスト", "request"]]), :class => 'selectpicker', :data => { :width => 128 } %>
+        <%= button_tag "検索", :type => 'submit', :class => 'btn btn-default' %>
       <% end %>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "投稿する", posts_new_path %></li>

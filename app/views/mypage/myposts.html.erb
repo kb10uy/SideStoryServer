@@ -1,1 +1,10 @@
 <h1>自分の投稿の一覧</h1>
+
+<div class="row">
+  <div class="col-md-12">
+    <% @my_posts.each do |p| %>
+      <%= render partial: 'home/post', locals: { post: p } %>
+    <% end %>
+  </div>
+</div>
+<%= paginate @my_posts%>

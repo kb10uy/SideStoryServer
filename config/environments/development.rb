@@ -54,6 +54,6 @@ Rails.application.configure do
   
   config.serve_static_files = true
   config.assets.compress = false
-
-
+  
+  config.web_console.whitelisted_ips = '192.168.0.0/24'
 end
