@@ -33,7 +33,13 @@
     <ul class="list-inline">
       <% if @post.tags.count > 0 %>
         <% @post.tags.each do |t| %>
-          <li><h4><a class="label label-primary" href="#notyet"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <%= t.name %></a></h4></li>
+          <li>
+            <h4>
+              <%= link_to search_posts_path(keyword: t.name, type: 'tag'), :class => 'label label-primary' do %>
+                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <%= t.name %>
+              <% end %>
+            </h4>
+          </li>
         <% end %>
       <% else %>
         <p>タグはありません</p>

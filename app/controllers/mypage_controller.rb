@@ -7,7 +7,7 @@ class MypageController < ApplicationController
   end
   
   def myposts
-    
+    @my_posts = Post.where(user: current_user).page(params[:page])
   end
   
 end
